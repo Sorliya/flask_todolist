@@ -1,0 +1,14 @@
+{% extends "bootstrap/base.html" %}
+
+    <title>{{title}}</title>
+
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% block app_content %}
+        {% endblock %}
+    </div>
+{% endblock %}

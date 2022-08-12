@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Hello,{{ current_user.username }}</h1>
+      <br>
+      {% import 'bootstrap/wtf.html' as wtf %}
+      {{ wtf.quick_form(form) }}
+      <hr>
+      {% for post in posts.items %}
+        <div class="media">
+          <div class="media-body">
+            <h4 class="media-heading">{{ post.author.username }}</h4>
+            <small class="text-muted">{{ post.timestamp }}</small>
+            <p>{{ post.name }}</p>
+            <p>{{ post.description }}</p>
+            <p>{{ post.currency }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
