@@ -34,7 +34,7 @@ class Post(db.Model):
     name = db.Column(db.String(10), nullable=False)
     description = db.Column(db.String(50), nullable=False)
     currency = db.Column(db.String(50), nullable=False)
-    create_at = db.Column(db.DateTime, default=datetime.now)
+    create_at = db.Column(db.DateTime, default=datetime.utcnow)
     update_at = db.Column(db.DateTime, default=datetime.now,onupdate=datetime.now)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
